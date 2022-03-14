@@ -5,7 +5,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Help\**" />
+    <Compile Remove="Models\**" />
+    <Content Remove="Help\**" />
+    <Content Remove="Models\**" />
+    <EmbeddedResource Remove="Help\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Help\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="NasaManager.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebApiAsteroides.Entities\WebApiAsteroides.Entities.csproj" />
+    <ProjectReference Include="..\WebApiAsteroides.Manager\WebApiAsteroides.Manager.csproj" />
   </ItemGroup>
 
 

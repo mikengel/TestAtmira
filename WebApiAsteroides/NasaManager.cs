@@ -15,36 +15,37 @@ namespace WebApiAsteroides
         public IList<Asteroid> AsteroidesPotenciales;
         public async void GetData(string uri, string url)
         {
-            var queryString = url.Split('?')[1];
-            var queryStrArray = queryString.Split('&');
-            var fechaDesde = Convert.ToDateTime(queryStrArray[0].Split('=')[1]);
-            var fechaHasta = Convert.ToDateTime(queryStrArray[1].Split('=')[1]);
+            var filtros = url.Split('?')[1];
+            var parametros = filtros.Split('&');
+            var fechaDesde = Convert.ToDateTime(parametros[0].Split('=')[1]);
+            var fechaHasta = Convert.ToDateTime(parametros[1].Split('=')[1]);
             var dias = (fechaHasta - fechaDesde).TotalDays;
-            var client = new HttpClient
+
+            var cliente = new HttpClient
             {
                 BaseAddress = new Uri(uri)
             };
 
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Add("User-Agent", "Awesome-Octocat-App");
+            cliente.DefaultRequestHeaders.Accept.Clear();
+            cliente.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            cliente.DefaultRequestHeaders.Add("User-Agent", "Awesome-Octocat-App");
 
-            HttpResponseMessage response = await client.GetAsync(url);
+            HttpResponseMessage response = await cliente.GetAsync(url);
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
                 
-                JObject root = JObject.Parse(json);
-                JObject near = (JObject)root["near_earth_objects"];
+                var jsonObj = JObject.Parse(json);
+                var objCercanos = (JObject)jsonObj["near_earth_objects"];
 
                 for (var i = 0; i <= dias; i++)
                 {
-                    JArray jArray = (JArray)near[$"{fechaDesde.AddDays(i):yyyy-MM-dd}"];
+                    var jsonArray = (JArray)objCercanos[$"{fechaDesde.AddDays(i):yyyy-MM-dd}"];
 
-                    foreach (JObject jObject in jArray)
+                    foreach (JObject item in jsonArray)
                     {
                         var asteroid = new Asteroid();
-                        asteroid = jObject.ToObject<Asteroid>();
+                        asteroid = item.ToObject<Asteroid>();
 
                         if (asteroid.IsPotentiallyHazardousAsteroid)
                         {

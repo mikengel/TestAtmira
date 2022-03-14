@@ -5,7 +5,13 @@ VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiAsteroides", "WebApiAsteroides\WebApiAsteroides.csproj", "{4F3B995B-DF1A-4EF6-9DF2-090D83714B4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingXUnitWebApiAsteroides.Tests", "TestingXUnitWebApiAsteroides.Tests\TestingXUnitWebApiAsteroides.Tests.csproj", "{E2398EBC-EF8F-4CA7-9F0C-E765A612EC82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestingXUnitWebApiAsteroides.Tests", "TestingXUnitWebApiAsteroides.Tests\TestingXUnitWebApiAsteroides.Tests.csproj", "{E2398EBC-EF8F-4CA7-9F0C-E765A612EC82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiAsteroides.Data", "WebApiAsteroides.Data\WebApiAsteroides.Data.csproj", "{91E06DF9-FE76-4DF6-9336-F04AFEB49EDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiAsteroides.Entities", "WebApiAsteroides.Entities\WebApiAsteroides.Entities.csproj", "{FA01339D-7E00-4EB6-884F-A064137B8FF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiAsteroides.Manager", "WebApiAsteroides.Manager\WebApiAsteroides.Manager.csproj", "{B470F022-DF67-49D8-9D20-495E489F1049}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{E2398EBC-EF8F-4CA7-9F0C-E765A612EC82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2398EBC-EF8F-4CA7-9F0C-E765A612EC82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2398EBC-EF8F-4CA7-9F0C-E765A612EC82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91E06DF9-FE76-4DF6-9336-F04AFEB49EDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91E06DF9-FE76-4DF6-9336-F04AFEB49EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91E06DF9-FE76-4DF6-9336-F04AFEB49EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91E06DF9-FE76-4DF6-9336-F04AFEB49EDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA01339D-7E00-4EB6-884F-A064137B8FF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA01339D-7E00-4EB6-884F-A064137B8FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA01339D-7E00-4EB6-884F-A064137B8FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA01339D-7E00-4EB6-884F-A064137B8FF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B470F022-DF67-49D8-9D20-495E489F1049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B470F022-DF67-49D8-9D20-495E489F1049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B470F022-DF67-49D8-9D20-495E489F1049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B470F022-DF67-49D8-9D20-495E489F1049}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
