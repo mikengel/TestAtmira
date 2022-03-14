@@ -33,13 +33,9 @@ namespace WebApiAsteroides
         {
             if (env.IsDevelopment())
             {
-                app.UseExceptionHandler("/error-desarrollo");//.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/error");
-            }
-
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
