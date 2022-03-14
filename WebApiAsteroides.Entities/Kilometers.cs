@@ -2,18 +2,9 @@
 
 namespace WebApiAsteroides.Entities
 {
-    public class Kilometers
+    public class Kilometers : IFloatMaxMin
     {
-        [JsonProperty("estimated_diameter_min")]
-        public float EstimatedDiameterMin { get; set; }
-        [JsonProperty("estimated_diameter_max")]
-        public float EstimatedDiameterMax { get; set; }
-        public float EstimatedDiameterMid
-        {
-            get
-            {
-                return (EstimatedDiameterMin + EstimatedDiameterMax) / 2.0f;
-            }
-        }
+        public float DiametroMinimoEstimado { get; set; }
+        public float DiametroMaximoEstimado { get; set; }
     }
 }

@@ -83,7 +83,8 @@ namespace WebApiAsteroides.Manager
                           select new ResultModel
                           {
                               Nombre = a.Name,
-                              Diametro = a.EstimatedDiameter.Kilometers.EstimatedDiameterMid,
+                              Diametro = (a.EstimatedDiameter.Kilometers.DiametroMinimoEstimado
+                              + a.EstimatedDiameter.Kilometers.DiametroMaximoEstimado) / 2.0f,
                               Velocidad = a.CloseApproachData[0].RelativeVelocity.KilometersPerHour,
                               Fecha = Convert.ToDateTime(a.CloseApproachData[0].CloseApproachDate),
                               Planeta = a.CloseApproachData[0].OrbitingBody

@@ -2,11 +2,9 @@
 
 namespace WebApiAsteroides.Entities
 {
-    public class Feet
+    public class Feet : IFloatMaxMin
     {
-        [JsonProperty("estimated_diameter_min")]
-        public float EstimatedDiameterMin { get; set; }
-        [JsonProperty("estimated_diameter_max")]
-        public float EstimatedDiameterMax { get; set; }
+        public float DiametroMinimoEstimado { get; set; }
+        public float DiametroMaximoEstimado { get; set; }
     }
 }
