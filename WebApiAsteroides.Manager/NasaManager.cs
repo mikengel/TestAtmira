@@ -78,7 +78,7 @@ namespace WebApiAsteroides.Manager
                         IsOk = false;
                 }
                 result = (from a in AsteroidesPotenciales
-                          where (DateTime.Today - Convert.ToDateTime(a.CloseApproachData[0].CloseApproachDate)).TotalDays < 7
+                          where Math.Abs((Convert.ToDateTime(a.CloseApproachData[0].CloseApproachDate) - DateTime.Today).TotalDays) <= 7
                           where a.CloseApproachData[0].OrbitingBody.ToLower() == planet.ToLower()
                           select new ResultModel
                           {
